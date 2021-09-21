@@ -1,0 +1,17 @@
+{
+    "name": "hexlet/code",
+    "description": "my first project on Hexlet: brain-games",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MarySoul",
+            "email": "soulmeri0@gmail.com"
+        }
+    ],
+    "require": {}
+}
