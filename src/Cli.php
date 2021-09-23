@@ -13,8 +13,6 @@ class Cli
         $name = prompt('May I have your name?');
         line("Hello, %s!", $name);
     }
-    
-    
     public static function even()
     {
         line('Welcome to the Brain Game!');
