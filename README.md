@@ -4,3 +4,4 @@
 [![codeSniffer](https://github.com/MaruSoul/php-project-lvl1/actions/workflows/codeSniffer.yml/badge.svg)](https://github.com/MaruSoul/php-project-lvl1/actions)
 [![asciicast](https://asciinema.org/a/C9NgaxNsoo6wsA3471HQvvpan.svg)](https://asciinema.org/a/C9NgaxNsoo6wsA3471HQvvpan)
 [![asciicast](https://asciinema.org/a/xy2EGRMAQJg2VQn2MbbioVNku.svg)](https://asciinema.org/a/xy2EGRMAQJg2VQn2MbbioVNku)
+[![asciicast](https://asciinema.org/a/NAdTTUhAwHSBKNvkn4xJAVIF1.svg)](https://asciinema.org/a/NAdTTUhAwHSBKNvkn4xJAVIF1)

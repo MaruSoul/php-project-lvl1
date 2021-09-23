@@ -76,4 +76,45 @@ class Cli
             }
         }
     }
+    public static function gcd()
+    {
+        line('Welcome to the Brain Game!');
+        $name = prompt('May I have your name?');
+        line("Hello, %s!", $name);
+        line('What is the result of the expression?');
+        $numberOfQuestionsAsked = 0;
+        $hasWrongAnswer = false;
+        while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
+            $numberOne = rand(1, 100);
+            $numberTwo = rand(1, 100);
+            $correctAnswer = gmp_gcd($numberOne, $numberTwo);
+            line('Question: ' . $numberOne . ' ' . $numberTwo);
+            $answer = prompt('Your answer');
+            if (is_numeric($answer) && $answer == $correctAnswer) {
+                line('Correct!');
+                $numberOfQuestionsAsked++;
+            } else {
+                line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
+                line("Let's try again, %s!", $name);
+                $hasWrongAnswer = true;
+            }
+            if ($numberOfQuestionsAsked == 3) {
+                line('Congratulations, %s!', $name);
+            }
+        }
+    }
 }
+// Welcome to the Brain Games!
+// May I have your name? Sam
+// Hello, Sam!
+// Find the greatest common divisor of given numbers.
+// Question: 25 50
+// Your answer: 25
+// Correct!
+// Question: 100 52
+// Your answer: 4
+// Correct!
+// Question: 3 9
+// Your answer: 3
+// Correct!
+// Congratulations, Sam!
