@@ -26,10 +26,44 @@ class Cli
             $correctAnswer = ($number % 2 == 0) ? 'yes' : 'no';
             line('Question:' . $number);
             $answer = prompt('Your answer');
-            if (($number % 2) == 0 && $answer == 'yes') {
+            if ($answer == $correctAnswer) {
                 line('Correct!');
                 $numberOfQuestionsAsked++;
-            } elseif (($number % 2) != 0 && $answer == 'no') {
+            } else {
+                line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
+                line("Let's try again, %s!", $name);
+                $hasWrongAnswer = true;
+            }
+            if ($numberOfQuestionsAsked == 3) {
+                line('Congratulations, %s!', $name);
+            }
+        }
+    }
+    public static function calc()
+    {
+        line('Welcome to the Brain Game!');
+        $name = prompt('May I have your name?');
+        line("Hello, %s!", $name);
+        line('What is the result of the expression?');
+        $numberOfQuestionsAsked = 0;
+        $hasWrongAnswer = false;
+        while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
+            $numberOne = rand(1, 100);
+            $numberTwo = rand(1, 100);
+            $randomSymbolGeneration = rand(1, 3);
+            if ($randomSymbolGeneration == 1) {
+                $symbol = "+";
+                $correctAnswer = $numberOne + $numberTwo;
+            } elseif ($randomSymbolGeneration == 2) {
+                $symbol = '-';
+                $correctAnswer = $numberOne - $numberTwo;
+            } else {
+                $symbol = '*';
+                $correctAnswer = $numberOne * $numberTwo;
+            }
+            line('Question: ' . "{$numberOne} {$symbol} {$numberTwo}");
+            $answer = prompt('Your answer');
+            if ($answer == $correctAnswer) {
                 line('Correct!');
                 $numberOfQuestionsAsked++;
             } else {
