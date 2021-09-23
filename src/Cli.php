@@ -81,7 +81,7 @@ class Cli
         line('Welcome to the Brain Game!');
         $name = prompt('May I have your name?');
         line("Hello, %s!", $name);
-        line('What is the result of the expression?');
+        line('Find the greatest common divisor of given numbers.');
         $numberOfQuestionsAsked = 0;
         $hasWrongAnswer = false;
         while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
@@ -104,17 +104,3 @@ class Cli
         }
     }
 }
-// Welcome to the Brain Games!
-// May I have your name? Sam
-// Hello, Sam!
-// Find the greatest common divisor of given numbers.
-// Question: 25 50
-// Your answer: 25
-// Correct!
-// Question: 100 52
-// Your answer: 4
-// Correct!
-// Question: 3 9
-// Your answer: 3
-// Correct!
-// Congratulations, Sam!
