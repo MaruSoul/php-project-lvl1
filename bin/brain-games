@@ -3,4 +3,5 @@
 
 require_once(__DIR__ . '/../vendor/autoload.php');
 
-Hexlet\Code\Cli::hello();
+$Cli = new Hexlet\Code\Cli();
+$Cli->run(Hexlet\Code\Games\Hello::class);
