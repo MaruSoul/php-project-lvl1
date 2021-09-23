@@ -12,7 +12,7 @@ class Even extends Engine
     {
         line('Answer "yes" if the number is even, otherwise answer "no"');
         $numberOfQuestionsAsked = 0;
-        $hasWrongAnswer = false;
+        $hasWrongAnswer = false;        
         while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
             $number = rand(1, 100);
             $this->correctAnswer = ($number % 2 == 0) ? 'yes' : 'no';
