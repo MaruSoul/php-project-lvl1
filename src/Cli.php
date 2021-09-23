@@ -13,7 +13,7 @@ class Cli
         $name = prompt('May I have your name?');
         line("Hello, %s!", $name);
     }
-
+    
     
     public static function even()
     {
@@ -28,7 +28,7 @@ class Cli
             $correctAnswer = ($number % 2 == 0) ? 'yes' : 'no';
             line('Question:' . $number);
             $answer = prompt('Your answer');
-            if(($number % 2) == 0 && $answer == 'yes' ) {
+            if (($number % 2) == 0 && $answer == 'yes') {
                 line('Correct!');
                 $numberOfQuestionsAsked++;
             } elseif (($number % 2) != 0 && $answer == 'no') {
