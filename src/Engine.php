@@ -22,6 +22,11 @@ class Engine
         line("Hello, %s!", $this->name);
     }
 
+
+    public function game()
+    {
+    }
+
     public function gameOver()
     {
         if ($this->victory) {

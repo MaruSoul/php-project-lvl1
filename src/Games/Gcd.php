@@ -17,7 +17,7 @@ class Gcd extends Engine
         while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
             $numberOne = rand(1, 100);
             $numberTwo = rand(1, 100);
-            $this->correctAnswer = gmp_gcd($numberOne, $numberTwo);
+            $this->correctAnswer = \gmp_gcd($numberOne, $numberTwo);
             line('Question: ' . $numberOne . ' ' . $numberTwo);
             $this->answer = prompt('Your answer');
             if (is_numeric($this->answer) && $this->answer == $this->correctAnswer) {
