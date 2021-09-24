@@ -17,7 +17,7 @@ class Even extends Engine
         while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
             $number = rand(1, 100);
             $this->correctAnswer = ($number % 2 == 0) ? 'yes' : 'no';
-            line('Question:' . $number);
+            line('Question: ' . $number);
             $this->answer = prompt('Your answer');
             if ($this->answer == $this->correctAnswer) {
                 line('Correct!');
