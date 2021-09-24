@@ -3,6 +3,7 @@
 namespace Hexlet\Code\Games;
 
 use Hexlet\Code\Engine;
+
 use function cli\line;
 use function cli\prompt;
 
@@ -29,5 +30,5 @@ class Gcd extends Engine
                 $this->victory = true;
             }
         }
-    }   
+    }
 }

@@ -3,6 +3,7 @@
 namespace Hexlet\Code\Games;
 
 use Hexlet\Code\Engine;
+
 use function cli\line;
 use function cli\prompt;
 
@@ -13,7 +14,7 @@ class Prime extends Engine
         for ($i = 2; $i < $num; $i++) {
             if ($num % $i == 0) {
                 return false;
-            }               
+            }
         }
         return  true;
     }
@@ -25,7 +26,6 @@ class Prime extends Engine
         $hasWrongAnswer = false;
 
         while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
-      
             $number = rand(1, 100);
             $this->correctAnswer = self::isPrime($number) ? 'yes' : 'no';
             line('Question: ' . "{$number}");
