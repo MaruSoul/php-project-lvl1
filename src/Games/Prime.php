@@ -5,7 +5,7 @@ namespace Hexlet\Code\Games;
 use function cli\line;
 use function cli\prompt;
 
-function isPrime($num): bool
+function isPrime(int $num): bool
 {
     for ($i = 2; $i < $num; $i++) {
         if ($num % $i == 0) {

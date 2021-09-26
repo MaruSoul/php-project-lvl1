@@ -14,7 +14,7 @@ function welcomeToGame(): string
     return $name;
 }
 
-function gameOver($name, $answer, $correctAnswer, $victory): void
+function gameOver(string $name, ?string &$answer, ?string &$correctAnswer, ?string &$victory): void
 {
     if ($victory) {
         line('Congratulations, %s!', $name);
@@ -24,10 +24,15 @@ function gameOver($name, $answer, $correctAnswer, $victory): void
     }
 }
 
-function execute($gameName): void
+function execute(string $gameName): void
 {
     $func_name = "\\Hexlet\\Code\\Games\\{$gameName}";
     $name = welcomeToGame();
+
+    $answer = '';
+    $correctAnswer = '';
+    $victory = false;
+
     $func_name($name, $answer, $correctAnswer, $victory);
     gameOver($name, $answer, $correctAnswer, $victory);
 }

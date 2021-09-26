@@ -5,7 +5,7 @@ namespace Hexlet\Code\Games;
 use function cli\line;
 use function cli\prompt;
 
-function myGmpGcd(float $numberOne, float $numberTwo): int
+function myGmpGcd(float $numberOne, float $numberTwo): \GMP
 {
     if (function_exists('gmp_gcd')) {
         return gmp_gcd($numberOne, $numberTwo);
