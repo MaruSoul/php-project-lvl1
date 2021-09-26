@@ -5,7 +5,7 @@ namespace Hexlet\Code;
 use function cli\line;
 use function cli\prompt;
 
-function welcomeToGame() : string
+function welcomeToGame(): string
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
@@ -14,7 +14,7 @@ function welcomeToGame() : string
     return $name;
 }
 
-function gameOver($name, $answer, $correctAnswer, $victory) : void
+function gameOver($name, $answer, $correctAnswer, $victory): void
 {
     if ($victory) {
         line('Congratulations, %s!', $name);
@@ -24,7 +24,7 @@ function gameOver($name, $answer, $correctAnswer, $victory) : void
     }
 }
 
-function execute($gameName) : void
+function execute($gameName): void
 {
     $func_name = "\\Hexlet\\Code\\Games\\{$gameName}";
     $name = welcomeToGame();

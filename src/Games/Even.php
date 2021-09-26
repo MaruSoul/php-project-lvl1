@@ -5,7 +5,7 @@ namespace Hexlet\Code\Games;
 use function cli\line;
 use function cli\prompt;
 
-function Even(string $name, ?string &$answer, ?string &$correctAnswer, ?string &$victory) : void
+function Even(string $name, ?string &$answer, ?string &$correctAnswer, ?string &$victory): void
 {
     line('Answer "yes" if the number is even, otherwise answer "no"');
     $numberOfQuestionsAsked = 0;

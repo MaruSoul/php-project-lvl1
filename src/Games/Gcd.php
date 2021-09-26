@@ -5,7 +5,7 @@ namespace Hexlet\Code\Games;
 use function cli\line;
 use function cli\prompt;
 
-function myGmpGcd(float $numberOne, float $numberTwo) : int
+function myGmpGcd(float $numberOne, float $numberTwo): int
 {
     if (function_exists('gmp_gcd')) {
         return gmp_gcd($numberOne, $numberTwo);
@@ -24,7 +24,7 @@ function myGmpGcd(float $numberOne, float $numberTwo) : int
     return $max;
 }
 
-function Gcd(string $name, ?string &$answer, ?string &$correctAnswer, ?string &$victory) : void
+function Gcd(string $name, ?string &$answer, ?string &$correctAnswer, ?string &$victory): void
 {
     line('Find the greatest common divisor of given numbers.');
     $numberOfQuestionsAsked = 0;

@@ -5,7 +5,7 @@ namespace Hexlet\Code\Games;
 use function cli\line;
 use function cli\prompt;
 
-function Calc(string $name, ?string &$answer, ?string &$correctAnswer, ?string &$victory) : void
+function Calc(string $name, ?string &$answer, ?string &$correctAnswer, ?string &$victory): void
 {
     line('What is the result of the expression?');
     $numberOfQuestionsAsked = 0;
