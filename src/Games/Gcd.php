@@ -7,10 +7,6 @@ use function cli\prompt;
 
 function myGmpGcd(float $numberOne, float $numberTwo): int
 {
-    if (function_exists('gmp_gcd')) {
-        return gmp_gcd($numberOne, $numberTwo);
-    }
-
     $numberOne = abs($numberOne);
     $numberTwo = abs($numberTwo);
     $max = 1;

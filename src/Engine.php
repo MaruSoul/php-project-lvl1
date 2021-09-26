@@ -16,7 +16,7 @@ function welcomeToGame(): string
 
 function gameOver(string $name, ?string &$answer, ?string &$correctAnswer, ?string &$victory): void
 {
-    if ($victory) {
+    if ($victory === true) {
         line('Congratulations, %s!', $name);
     } else {
         line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
