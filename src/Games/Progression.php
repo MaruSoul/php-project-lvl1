@@ -5,7 +5,7 @@ namespace Hexlet\Code\Games;
 use function cli\line;
 use function cli\prompt;
 
-function Progression($name, &$answer, &$correctAnswer, &$victory)
+function Progression(string $name, ?string &$answer, ?string &$correctAnswer, ?string &$victory) : void
 {
     line('What number is missing in the progression?');
     $numberOfQuestionsAsked = 0;

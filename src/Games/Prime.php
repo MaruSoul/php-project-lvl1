@@ -5,7 +5,7 @@ namespace Hexlet\Code\Games;
 use function cli\line;
 use function cli\prompt;
 
-function isPrime($num)
+function isPrime($num) : bool
 {
     for ($i = 2; $i < $num; $i++) {
         if ($num % $i == 0) {
@@ -15,7 +15,7 @@ function isPrime($num)
     return  true;
 }
 
-function Prime($name, &$answer, &$correctAnswer, &$victory)
+function Prime(string $name, ?string &$answer, ?string &$correctAnswer, ?string &$victory) : void
 {
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
     $numberOfQuestionsAsked = 0;
