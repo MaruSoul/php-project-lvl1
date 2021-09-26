@@ -7,6 +7,23 @@ use Hexlet\Code\Engine;
 use function cli\line;
 use function cli\prompt;
 
+function myGmpGcd($numberOne, $numberTwo)
+{
+    if (function_exists('gmp_gcd')) {
+        return gmp_gcd($numberOne, $numberTwo);
+    }
+
+    $max = 1;
+
+    for ($i = 2; $i <= min($numberOne, $numberTwo); $i++) {
+        if (($numberOne % $i == 0) && ($numberTwo % $i == 0)) {
+            $max = $i;
+        }
+    }
+
+    return $max;
+}
+
 class Gcd extends Engine
 {
     public function game()
@@ -17,7 +34,7 @@ class Gcd extends Engine
         while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
             $numberOne = rand(1, 100);
             $numberTwo = rand(1, 100);
-            $this->correctAnswer = \gmp_gcd($numberOne, $numberTwo);
+            $this->correctAnswer = myGmpGcd($numberOne, $numberTwo);
             line('Question: ' . $numberOne . ' ' . $numberTwo);
             $this->answer = prompt('Your answer');
             if (is_numeric($this->answer) && $this->answer == $this->correctAnswer) {
