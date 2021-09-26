@@ -7,12 +7,15 @@ use function cli\prompt;
 
 function isPrime(int $num): bool
 {
+    if ($num < 2) {
+        return false;
+    }
     for ($i = 2; $i < $num; $i++) {
         if ($num % $i == 0) {
             return false;
         }
     }
-    return  true;
+    return true;
 }
 
 function Prime(string $name, ?string &$answer, ?string &$correctAnswer, ?string &$victory): void
