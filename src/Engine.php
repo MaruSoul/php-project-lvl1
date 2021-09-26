@@ -5,42 +5,29 @@ namespace Hexlet\Code;
 use function cli\line;
 use function cli\prompt;
 
-class Engine
+function welcomeToGame()
 {
-    public $name = null;
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
 
-    public $victory = false;
+    return $name;
+}
 
-    public $answer = null;
-
-    public $correctAnswer = null;
-
-    public function welcomeToGame()
-    {
-        line('Welcome to the Brain Game!');
-        $this->name = prompt('May I have your name?');
-        line("Hello, %s!", $this->name);
+function gameOver($name, $answer, $correctAnswer, $victory)
+{
+    if ($victory) {
+        line('Congratulations, %s!', $name);
+    } else {
+        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
+        line("Let's try again, %s!", $name);
     }
+}
 
-
-    public function game()
-    {
-    }
-
-    public function gameOver()
-    {
-        if ($this->victory) {
-            line('Congratulations, %s!', $this->name);
-        } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $this->answer, $this->correctAnswer);
-            line("Let's try again, %s!", $this->name);
-        }
-    }
-
-    public function execute()
-    {
-        $this->welcomeToGame();
-        $this->game();
-        $this->gameOver();
-    }
+function execute($gameName)
+{
+    $func_name = "\\Hexlet\\Code\\Games\\{$gameName}";
+    $name = welcomeToGame();
+    $func_name($name, $answer, $correctAnswer, $victory);
+    gameOver($name, $answer, $correctAnswer, $victory);
 }

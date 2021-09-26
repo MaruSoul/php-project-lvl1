@@ -2,11 +2,8 @@
 
 namespace Hexlet\Code;
 
-class Cli
+function run(string $gameName)
 {
-    public function run(string $classname)
-    {
-        $game = new $classname();
-        $game->execute();
-    }
+    require_once(__DIR__ . '/Games/' . $gameName . '.php');
+    execute($gameName);
 }

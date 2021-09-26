@@ -2,12 +2,7 @@
 
 namespace Hexlet\Code\Games;
 
-use Hexlet\Code\Engine;
-
-class Hello extends Engine
+function Hello($name, &$answer, &$correctAnswer, &$victory)
 {
-    public function execute()
-    {
-        $this->welcomeToGame();
-    }
+    exit;
 }

@@ -2,8 +2,6 @@
 
 namespace Hexlet\Code\Games;
 
-use Hexlet\Code\Engine;
-
 use function cli\line;
 use function cli\prompt;
 
@@ -24,28 +22,27 @@ function myGmpGcd($numberOne, $numberTwo)
     return $max;
 }
 
-class Gcd extends Engine
+function Gcd($name, &$answer, &$correctAnswer, &$victory)
 {
-    public function game()
-    {
-        line('Find the greatest common divisor of given numbers.');
-        $numberOfQuestionsAsked = 0;
-        $hasWrongAnswer = false;
-        while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
-            $numberOne = rand(1, 100);
-            $numberTwo = rand(1, 100);
-            $this->correctAnswer = myGmpGcd($numberOne, $numberTwo);
-            line('Question: ' . $numberOne . ' ' . $numberTwo);
-            $this->answer = prompt('Your answer');
-            if (is_numeric($this->answer) && $this->answer == $this->correctAnswer) {
-                line('Correct!');
-                $numberOfQuestionsAsked++;
-            } else {
-                return;
-            }
-            if ($numberOfQuestionsAsked == 3) {
-                $this->victory = true;
-            }
+    line('Find the greatest common divisor of given numbers.');
+    $numberOfQuestionsAsked = 0;
+    $hasWrongAnswer = false;
+    $victory = false;
+
+    while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
+        $numberOne = rand(1, 100);
+        $numberTwo = rand(1, 100);
+        $correctAnswer = myGmpGcd($numberOne, $numberTwo);
+        line('Question: ' . $numberOne . ' ' . $numberTwo);
+        $answer = prompt('Your answer');
+        if (is_numeric($answer) && $answer == $correctAnswer) {
+            line('Correct!');
+            $numberOfQuestionsAsked++;
+        } else {
+            return;
+        }
+        if ($numberOfQuestionsAsked == 3) {
+            $victory = true;
         }
     }
 }

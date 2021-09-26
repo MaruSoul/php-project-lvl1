@@ -2,44 +2,40 @@
 
 namespace Hexlet\Code\Games;
 
-use Hexlet\Code\Engine;
-
 use function cli\line;
 use function cli\prompt;
 
-class Prime extends Engine
+function isPrime($num)
 {
-    public static function isPrime($num)
-    {
-        for ($i = 2; $i < $num; $i++) {
-            if ($num % $i == 0) {
-                return false;
-            }
+    for ($i = 2; $i < $num; $i++) {
+        if ($num % $i == 0) {
+            return false;
         }
-        return  true;
     }
+    return  true;
+}
 
-    public function game()
-    {
-        line('Answer "yes" if given number is prime. Otherwise answer "no".');
-        $numberOfQuestionsAsked = 0;
-        $hasWrongAnswer = false;
+function Prime($name, &$answer, &$correctAnswer, &$victory)
+{
+    line('Answer "yes" if given number is prime. Otherwise answer "no".');
+    $numberOfQuestionsAsked = 0;
+    $hasWrongAnswer = false;
+    $victory = false;
 
-        while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
-            $number = rand(1, 100);
-            $this->correctAnswer = self::isPrime($number) ? 'yes' : 'no';
-            line('Question: ' . "{$number}");
-            $this->answer = prompt('Your answer');
+    while ($numberOfQuestionsAsked < 3 && $hasWrongAnswer == false) {
+        $number = rand(1, 100);
+        $correctAnswer = isPrime($number) ? 'yes' : 'no';
+        line('Question: ' . "{$number}");
+        $answer = prompt('Your answer');
 
-            if ($this->answer == $this->correctAnswer) {
-                line('Correct!');
-                $numberOfQuestionsAsked++;
-            } else {
-                return;
-            }
-            if ($numberOfQuestionsAsked == 3) {
-                $this->victory = true;
-            }
+        if ($answer == $correctAnswer) {
+            line('Correct!');
+            $numberOfQuestionsAsked++;
+        } else {
+            return;
+        }
+        if ($numberOfQuestionsAsked == 3) {
+            $victory = true;
         }
     }
 }
